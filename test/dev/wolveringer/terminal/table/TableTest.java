@@ -1,7 +1,5 @@
 package dev.wolveringer.terminal.table;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import dev.wolveringer.string.ColoredChar;
