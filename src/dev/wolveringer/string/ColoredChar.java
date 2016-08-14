@@ -18,6 +18,13 @@ public class ColoredChar {
 		this.character = character;
 	}
 	
+	public ColoredChar(String character) {
+		if(ChatColor.stripColor(character).length() != 1 || character.charAt(character.length()-1) != ChatColor.stripColor(character).charAt(0))
+			throw new IllegalArgumentException();
+		this.character = ChatColor.stripColor(character).charAt(0);
+		setColors(character.substring(0,character.length()-1));
+	}
+	
 	public void setModifier(ChatColor color,boolean flag){
 		switch (color) {
 		case BOLD:
@@ -60,7 +67,7 @@ public class ColoredChar {
 		int index = 0;
 		while (index < colors.length()) {
 			if(colors.charAt(index) != '§')
-				throw new IllegalArgumentException("Unexpected character '"+colors.charAt(index)+"'");
+				throw new IllegalArgumentException("Unexpected character '"+colors.charAt(index)+"' at index "+index+" in string '"+colors+"'");
 			char charcode = colors.charAt(++index);
 			ChatColor color = ChatColor.getByChar(charcode);
 			switch (color) {
@@ -79,6 +86,7 @@ public class ColoredChar {
 				resetModifiers();
 				break;
 			}
+			index++;
 		}
 	}
 	
@@ -96,7 +104,17 @@ public class ColoredChar {
 	
 	@Override
 	public String toString() {
-		return (color != null ? color.toString() : "")+buildModifiers()+Character.toString(character);
+		return toString(true);
+	}
+	
+	public String toString(boolean printColor) {
+		return toString(printColor, printColor);
+	}
+	
+	public String toString(boolean printColor,boolean reset) {
+		if(printColor)
+			return (color != null ? color.toString() : "")+buildModifiers()+Character.toString(character)+(reset ? "§r" : "");
+		return Character.toString(character);
 	}
 	
 	private String buildModifiers(){
