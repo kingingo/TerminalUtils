@@ -1,4 +1,4 @@
-package dev.wolveringer.string;
+package eu.epicpvp.string;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

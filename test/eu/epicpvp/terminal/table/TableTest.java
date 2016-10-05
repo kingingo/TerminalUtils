@@ -1,10 +1,10 @@
-package dev.wolveringer.terminal.table;
+package eu.epicpvp.terminal.table;
 
 import org.junit.Test;
 
-import dev.wolveringer.string.ColoredChar;
-import dev.wolveringer.terminal.table.TerminalTable.Align;
-import dev.wolveringer.terminal.table.TerminalTable.TerminalRow;
+import eu.epicpvp.string.ColoredChar;
+import eu.epicpvp.terminal.table.TerminalTable.Align;
+import eu.epicpvp.terminal.table.TerminalTable.TerminalRow;
 
 public class TableTest {
 

@@ -1,4 +1,4 @@
-package dev.wolveringer.string;
+package eu.epicpvp.string;
 
 import lombok.Getter;
 import lombok.Setter;

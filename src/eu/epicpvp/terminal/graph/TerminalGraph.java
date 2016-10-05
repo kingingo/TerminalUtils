@@ -1,4 +1,4 @@
-package dev.wolveringer.terminal.graph;
+package eu.epicpvp.terminal.graph;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,8 +12,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.math3.analysis.interpolation.SplineInterpolator;
 
-import dev.wolveringer.string.ColoredChar;
-import dev.wolveringer.string.ColoredString;
+import eu.epicpvp.string.ColoredChar;
+import eu.epicpvp.string.ColoredString;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
